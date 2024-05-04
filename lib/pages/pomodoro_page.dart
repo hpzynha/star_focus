@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:star_focus/style/style.dart';
+import 'package:star_focus/utils/style.dart';
 import 'package:star_focus/widgets/buttons.dart';
 import 'package:star_focus/widgets/timer.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:star_focus/style/style.dart';
+import 'package:star_focus/utils/style.dart';
 
 class Timer extends StatelessWidget {
   const Timer({super.key});
