@@ -3,9 +3,9 @@ import 'package:star_focus/utils/style.dart';
 import 'package:star_focus/utils/utils.dart';
 
 class TimeOptions extends StatelessWidget {
-  double selectedTime = 1500;
+  final double selectedTime = 1500;
 
-  TimeOptions({super.key});
+  const TimeOptions({super.key});
 
   @override
   Widget build(BuildContext context) {
