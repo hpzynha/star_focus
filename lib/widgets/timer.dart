@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:star_focus/utils/style.dart';
 
 class Timer extends StatelessWidget {
-  const Timer({super.key});
+  final String minutes;
+  final String seconds;
+  const Timer({super.key, required this.minutes, required this.seconds});
 
   @override
   Widget build(BuildContext context) {
@@ -10,19 +12,10 @@ class Timer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          '25',
+          '${minutes.isNotEmpty ? minutes : '25'}:${seconds.isNotEmpty ? seconds : '00'}',
           style: textStyle(96, textColor),
         ),
         const SizedBox(width: 5),
-        Text(
-          ":",
-          style: textStyle(96, textColor),
-        ),
-        const SizedBox(width: 5),
-        Text(
-          '00',
-          style: textStyle(96, textColor),
-        ),
       ],
     );
   }

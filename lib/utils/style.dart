@@ -5,6 +5,7 @@ Color backgroundColor = const Color(0xFF1B1B1B);
 Color buttonColor = const Color(0xFF353839);
 Color textColor = const Color(0xFFFEFEFA);
 Color buttonHoverColor = const Color(0xFF808080);
+Color awardColor = const Color(0xFFFFD700);
 
 // TextStyle
 TextStyle textStyle(double size, [Color? color, FontWeight? fw]) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_focus/pages/select_time_page.dart';
 import 'package:star_focus/utils/style.dart';
 import 'package:star_focus/widgets/buttons.dart';
 import 'package:star_focus/widgets/timer.dart';
@@ -22,7 +23,17 @@ class _PomodoroPageState extends State<PomodoroPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 15),
-            const Timer(),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SelectTimePage()));
+                },
+                child: const Timer(
+                  minutes: '',
+                  seconds: '',
+                )),
             const SizedBox(height: 20),
             boxButton(text: 'Start Focus', onPress: () {}),
           ],
