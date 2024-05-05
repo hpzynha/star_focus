@@ -31,9 +31,7 @@ class _PomodoroPageState extends State<PomodoroPage> {
                       MaterialPageRoute(
                           builder: (context) => const SelectTimePage()));
                 },
-                child: const Timer(
-                  timer: '25:00',
-                )),
+                child: const Timer()),
             const SizedBox(height: 20),
             const TimeOptions(),
             const SizedBox(height: 20),

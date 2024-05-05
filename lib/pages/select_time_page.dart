@@ -19,13 +19,6 @@ class _SelectTimePageState extends State<SelectTimePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: Icon(
-              Icons.star_outline,
-              size: 50,
-              color: awardColor,
-            ),
-          ),
           const SizedBox(height: 30),
           TimeOptions(),
           const SizedBox(height: 30),
