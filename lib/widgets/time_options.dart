@@ -16,10 +16,8 @@ class TimeOptions extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: selectableTimes.map((time) {
-            print("Time: $time, Selected time: ${provider.selectedTime}");
             return InkWell(
               onTap: () {
-                print("taped on $time");
                 double selectedSeconds = double.parse(time);
                 provider.selectedTime = selectedSeconds;
               },

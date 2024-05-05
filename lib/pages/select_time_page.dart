@@ -20,7 +20,7 @@ class _SelectTimePageState extends State<SelectTimePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(height: 30),
-          TimeOptions(),
+          const TimeOptions(),
           const SizedBox(height: 30),
           boxButton(
             text: 'Done',
