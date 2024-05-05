@@ -9,7 +9,7 @@ class TimeOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<TimerService>(context, listen: false);
+    Provider.of<TimerService>(context, listen: false);
     return Consumer<TimerService>(builder: (context, provider, _) {
       return SingleChildScrollView(
         controller: ScrollController(initialScrollOffset: 155),
