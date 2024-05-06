@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:star_focus/services/timer_service.dart';
 import 'package:star_focus/utils/style.dart';
@@ -30,19 +32,22 @@ class _PomodoroStartPageState extends State<PomodoroStartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
+      body: Stack(children: [
+        const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 15),
-            GestureDetector(onTap: () {}, child: const TimerWidget()),
-            const SizedBox(height: 20),
-            boxButton(text: 'Hold to Stop Focus', onPress: () {}),
+            TimerWidget(),
           ],
         ),
-      ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: textButton(
+                text: 'Hold to Stop Focus', onPress: () {}, color: Colors.red),
+          ),
+        ),
+      ]),
     );
   }
 
