@@ -4,8 +4,8 @@ import 'package:star_focus/utils/style.dart';
 
 import '../services/timer_service.dart';
 
-class Timer extends StatelessWidget {
-  const Timer({super.key});
+class TimerWidget extends StatelessWidget {
+  const TimerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,9 @@ class Timer extends StatelessWidget {
     int totalSeconds = provider.currentDuration.toInt();
     int minutes = totalSeconds ~/ 60;
     int seconds = totalSeconds % 60;
-    String formattedTime = '$minutes:${seconds.toString().padLeft(2, '0')}';
+    String formattedMinutes = minutes.toString().padLeft(2, '0');
+    String formattedSeconds = seconds.toString().padLeft(2, '0');
+    String formattedTime = '$formattedMinutes:$formattedSeconds';
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

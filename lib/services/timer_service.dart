@@ -14,4 +14,18 @@ class TimerService extends ChangeNotifier {
     currentDuration = seconds;
     notifyListeners(); // Notify listeners after updating selected time
   }
+
+  void startTimer() {
+    timer = Timer.periodic(
+      const Duration(seconds: 1),
+      (timer) {
+        if (currentDuration <= 0) {
+          timer.cancel();
+        } else {
+          currentDuration--;
+          notifyListeners();
+        }
+      },
+    );
+  }
 }
