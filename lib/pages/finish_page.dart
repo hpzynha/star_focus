@@ -8,7 +8,7 @@ class FinishedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: Column(
+      body: const Column(
         children: [Text('Congratulations'), Icon(Icons.star)],
       ),
     );

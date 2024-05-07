@@ -28,4 +28,10 @@ class TimerService extends ChangeNotifier {
       },
     );
   }
+
+  void cancelTimer() {
+    timer.cancel();
+    currentDuration = _selectedTime;
+    notifyListeners();
+  }
 }

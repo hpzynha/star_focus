@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:provider/provider.dart';
+import 'package:star_focus/pages/pomodoro_page.dart';
 import 'package:star_focus/services/timer_service.dart';
 import 'package:star_focus/utils/style.dart';
 import 'package:star_focus/widgets/timer_widget.dart';
 
-import '../widgets/buttons.dart';
+import '../widgets/hold_button.dart';
 
 class PomodoroStartPage extends StatefulWidget {
   const PomodoroStartPage({super.key});
@@ -43,8 +43,26 @@ class _PomodoroStartPageState extends State<PomodoroStartPage> {
           padding: const EdgeInsets.only(bottom: 20),
           child: Align(
             alignment: Alignment.bottomCenter,
-            child: textButton(
-                text: 'Hold to Stop Focus', onPress: () {}, color: Colors.red),
+            child: HoldingButton(
+              buttonText: 'Hold to Stop Focus',
+              holdDuration: const Duration(seconds: 1),
+              onPressed: () {
+                _timer.cancelTimer();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const PomodoroPage()),
+                  ),
+                );
+              },
+              loadingIndicator: const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+              ),
+              completeIndicator: const Icon(
+                Icons.check,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
       ]),
@@ -53,6 +71,7 @@ class _PomodoroStartPageState extends State<PomodoroStartPage> {
 
   @override
   void dispose() {
+    _timer.timer.cancel();
     _timer.dispose();
     super.dispose();
   }
