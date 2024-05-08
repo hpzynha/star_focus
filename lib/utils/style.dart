@@ -6,6 +6,7 @@ Color buttonColor = const Color(0xFF353839);
 Color textColor = const Color(0xFFFEFEFA);
 Color buttonHoverColor = const Color(0xFF808080);
 Color awardColor = const Color(0xFFFFD700);
+Color springGreen = const Color(0xFF04F16F);
 
 // TextStyle
 TextStyle textStyle(double size, [Color? color, FontWeight? fw]) {

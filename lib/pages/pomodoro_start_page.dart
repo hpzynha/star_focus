@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 import 'package:star_focus/pages/pomodoro_page.dart';
 import 'package:star_focus/services/timer_service.dart';
@@ -55,8 +54,8 @@ class _PomodoroStartPageState extends State<PomodoroStartPage> {
                   ),
                 );
               },
-              loadingIndicator: const CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+              loadingIndicator: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(springGreen),
               ),
               completeIndicator: const Icon(
                 Icons.check,

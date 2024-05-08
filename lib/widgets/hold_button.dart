@@ -74,22 +74,27 @@ class _HoldingButtonState extends State<HoldingButton>
       onTapDown: (_) => _handleHoldStart(),
       onTapUp: (_) => _handleHoldEnd(),
       onTapCancel: () => _handleHoldEnd(),
-      child: Container(
-        width: 200,
-        height: 50,
-        decoration: BoxDecoration(
-          color: _isHolding ? widget.loadingColor : widget.buttonColor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      child: Stack(
         alignment: Alignment.center,
-        child: _isComplete
-            ? widget.completeIndicator
-            : _isHolding
-                ? widget.loadingIndicator
-                : Text(
-                    widget.buttonText,
-                    style: TextStyle(color: Colors.white),
-                  ),
+        children: [
+          Container(
+            width: 200,
+            height: 50,
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            alignment: Alignment.center,
+            child: _isComplete
+                ? widget.completeIndicator
+                : _isHolding
+                    ? widget.loadingIndicator
+                    : Text(
+                        widget.buttonText,
+                        style: TextStyle(color: Colors.white),
+                      ),
+          ),
+        ],
       ),
     );
   }
